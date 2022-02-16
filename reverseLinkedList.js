@@ -29,23 +29,37 @@ const one = new ListNode(1, two);
 //   return newHead;
 // };
 
+// var reverseList = function (head) {
+//   let on = head;
+//   let prev = null;
+//   while (on != null) {
+//     //   store next node as temp
+//     const temp = on.next;
+
+//     //   set next to prev
+//     on.next = prev;
+
+//     //set prev to current node
+//     prev = on;
+
+//     // move on the next node
+//     on = temp;
+//   }
+//   return prev;
+// };
+
 var reverseList = function (head) {
   let on = head;
   let prev = null;
-  while (on != null) {
-    //   store next node as temp
-    const temp = on.next;
-
-    //   set next to prev
-    on.next = prev;
-
-    //set prev to current node
-    prev = on;
-
-    // move on the next node
-    on = temp;
+  console.log(prev);
+  if (on === null) {
+    return prev;
   }
-  return prev;
+  const temp = on.next;
+  on.next = prev;
+  prev = on;
+  //   console.log(on.val);
+  return reverseList(temp);
 };
 
 console.log(reverseList(one));
