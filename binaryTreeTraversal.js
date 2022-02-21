@@ -36,7 +36,7 @@ const tree = [[1], [2, 3], [4, 5, 6]];
 
 // console.log(levelOrder(one));
 
-// Breadth first search is going level by level and pulling each node from left to right.
+// Breadth first search is going level by level and pulling each node from left to right. in order to find a value or element.
 // grab the first node
 
 var levelOrder = function (root) {
