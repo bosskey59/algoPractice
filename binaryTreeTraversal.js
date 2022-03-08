@@ -39,23 +39,42 @@ const tree = [[1], [2, 3], [4, 5, 6]];
 // Breadth first search is going level by level and pulling each node from left to right. in order to find a value or element.
 // grab the first node
 
-var levelOrder = function (root) {
-    // queue is last in first out and we will insert nodes into que from left to right, top down
-    const queue = [root];
-    const levels = [];
-    while (queue.length) {
-        let qLength = queue.length;
-        const currentLevel = [];
-        while (qLength--) {
-            const node = queue.shift();
-            console.log(node);
-            node.left && queue.push(node.left);
-            node.right && queue.push(node.right);
-            currentLevel.push(node.val);
-        }
-        levels.push(currentLevel);
-        console.log(currentLevel);
-    }
-    return levels;
-};
+// var levelOrder = function (root) {
+//     // queue is last in first out and we will insert nodes into que from left to right, top down
+//     const queue = [root];
+//     const levels = [];
+//     while (queue.length) {
+//         let qLength = queue.length;
+//         const currentLevel = [];
+//         while (qLength--) {
+//             const node = queue.shift();
+//             console.log(node);
+//             node.left && queue.push(node.left);
+//             node.right && queue.push(node.right);
+//             currentLevel.push(node.val);
+//         }
+//         levels.push(currentLevel);
+//         console.log(currentLevel);
+//     }
+//     return levels;
+// };
+
+// const levelOrder = (root) => {
+//     if (!root) return [];
+//     const levels = [];
+//     const queue = [root];
+//     while (queue.length) {
+//         const currentLevel = [];
+//         let qLength = queue.length;
+//         while (qLength--) {
+//             const node = queue.shift();
+//             node.left && queue.push(node.left);
+//             node.right && queue.push(node.right);
+//             currentLevel.push(node.val);
+//         }
+//         levels.push(currentLevel);
+//     }
+//     return levels;
+// };
+
 console.log(levelOrder(one));
